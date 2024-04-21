@@ -1,0 +1,32 @@
+---
+import Menu from "../components/Menu.astro";
+import TitlePage from "../components/TitlePage.astro";
+import CardService from "../components/CardService.astro";
+
+const services = [
+    {
+        titulo: "Genesys Composer Callflow development",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat autem sit dicta tempora deserunt. Maxime quae architecto, voluptas dicta corrupti adipisci dolore asperiores distinctio nemo quibusdam esse natus autem deleniti.",
+    },
+    {
+        titulo: "Javascript Programmer",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat autem sit dicta tempora deserunt. Maxime quae architecto, voluptas dicta corrupti adipisci dolore asperiores distinctio nemo quibusdam esse natus autem deleniti.",
+    },
+    {
+        titulo: "Python Programmer",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat autem sit dicta tempora deserunt. Maxime quae architecto, voluptas dicta corrupti adipisci dolore asperiores distinctio nemo quibusdam esse natus autem deleniti.",
+    },
+];
+---
+
+<Menu />
+<section class="bg-gray-200 pt-20 pb-28 px-8">
+    <div class="max-w-6xl mx-auto">
+        <TitlePage title="Services" subtilte="Here´s what I offer"/>
+        <div class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+            {services.map((item) => (
+                <CardService title={item.titulo} desc={item.desc} />
+            ))}
+        </div>
+    </div>
+</section>
